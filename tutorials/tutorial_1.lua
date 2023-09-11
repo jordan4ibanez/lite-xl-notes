@@ -58,7 +58,7 @@ Now, let me explain a bit of info about why we're going to import rootview:
 
 RootView is a View that manages all the other Views.
 
-It gets input from Core and dispatches it to all the View.
+It gets input from Core and dispatches it to all the Views.
 
 It contains the rootnode which is a Node.
 
