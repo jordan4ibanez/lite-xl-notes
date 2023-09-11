@@ -25,7 +25,7 @@ The end programmer will see how the plugin evolves.
 1. keymap shortcuts
 2. running a thing from keymap shortcuts
 3. interfacing into lite-xl from thing
-4. a simple button that does a thing
+4. a simple button that does a thing that also does the thing from the previous key shortcut
 5. a simple button that does a thing to make another button
 6. a group of buttons
 7. a drop down menu
