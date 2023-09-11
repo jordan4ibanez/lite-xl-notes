@@ -3,12 +3,14 @@
 ### These are notes on creating documentation for lite-xl
 
 ## core dev recommends:
+
 I'd say the main concepts that might be useful for a new plugin dev are:
-commands and their predicates
-keymaps
-commandview:enter
-Doc/DocView methods
-an explanation on how you can override everything
+
+1. commands and their predicates
+2. keymaps
+3. commandview:enter
+4. Doc/DocView methods
+5. an explanation on how you can override everything
  
 maybe also something about rootview/rootnod
 
