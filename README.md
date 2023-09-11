@@ -38,7 +38,7 @@ The end programmer will see how the plugin evolves.
 5. a simple button that does a thing to make another button
 6. a group of buttons
 7. a drop down menu
-8. a window like the settings window
+8. a tab window, utilizing the ``View`` module
 9. put things into the window
 10. editing helpers (scope, indentation, etc)
 11. Not sure yet, find out more important things to make the plugin more advanced!
