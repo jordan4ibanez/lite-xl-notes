@@ -16,6 +16,12 @@ maybe also something about rootview/rootnod
 the full pathlist is in data/core/start.lua
 
 ## Tutorial layout rough draft:
+
+This will be built upon a rolling implementation on the same plugin.
+
+The end programmer will see how the plugin evolves.
+
+0. the most basic tutorial, the base layout of a plugin
 1. keymap shortcuts
 2. running a thing from keymap shortcuts
 3. interfacing into lite-xl from thing
@@ -26,4 +32,4 @@ the full pathlist is in data/core/start.lua
 8. a window like the settings window
 9. put things into the window
 10. editing helpers (scope, indentation, etc)
-
+11. Not sure yet, find out more important things to make the plugin more advanced!
