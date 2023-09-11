@@ -40,13 +40,21 @@ local command = require "core.command"
 -- The "style" module will allow us to use styling options.
 local style = require "core.style"
 
--- The "config" module will be used to store certain things like and functions.
+-- The "config" module will be used to store certain things like colors and functions.
 local config = require "core.config"
 
 -- The "keymap" module will allow us to set keybindings for our commands.
 local keymap = require "core.keymap"
 
 --[[
+
+As you can see, we've been localizing all these imported modules so they don't leak into global scope.
+
+Now, let me explain a bit of info about why we're going to import rootview:
+
+
+-----------------------------------------------------
+
 
 RootView is a View that manages all the other Views.
 
@@ -74,9 +82,15 @@ As you can see, we've been requiring core modules for everything we've been doin
 If you wanted to make a dependency on another plugin, it's quite simple.
 
 
+local MyModule = require "plugins.my_module"
 
 
+Pretty simple, right? this imported module would just be called "my_module.lua" in the plugins folder.
+
+Don't worry, we'll touch up on this later in the tutorial. Let's focus a bit on this one for now.
 
 ]]--
+
+
 
 
