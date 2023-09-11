@@ -73,6 +73,7 @@ Think of RootView as the window manager for lite-xl.
 Since we want to modify RootView, we'll need to require it first.
 
 ]]--
+
 local RootView = require "core.rootview"
 
 --[[
@@ -107,6 +108,7 @@ So it's utilized by creating a table in config.plugins.your_plugin_name. Where y
 Since this plugin is called tutorial_1, we can just do this:
 
 ]]--
+
 config.plugins.tutorial_1 = {}
 
 
@@ -151,11 +153,15 @@ config.plugins.tutorial_1.text_color = { common.color "#FF0000" }
 Translucent Gray
 config.plugins.tutorial_1.text_color = { common.color "#80808080" } <- that last 80 is the alpha channel :) 50%
 
+A handy guide for hex alpha channel: https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 We're going to use violet because it's quite visible:
 
 ]]--
+
+config.plugins.tutorial_1.text_color = { 200, 140, 220 }
 
 
 
