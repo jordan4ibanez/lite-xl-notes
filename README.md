@@ -23,5 +23,7 @@ the full pathlist is in data/core/start.lua
 5. a simple button that does a thing to make another button
 6. a group of buttons
 7. a drop down menu
-8. editing helpers (scope, indentation, etc)
+8. a window like the settings window
+9. put things into the window
+10. editing helpers (scope, indentation, etc)
 
