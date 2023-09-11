@@ -85,7 +85,7 @@ If you wanted to make a dependency on another plugin, it's quite simple.
 
 local MyModule = require "plugins.my_module"
 
-Pretty simple, right? this imported module would just be called "my_module.lua" in the plugins folder.
+Pretty simple, right? This imported module would just be called "my_module.lua" in the plugins folder.
 
 
 Something I want you to notice: Now we're using the words "plugin" and "module" interchangeably!
@@ -162,6 +162,195 @@ We're going to use violet because it's quite visible:
 ]]--
 
 config.plugins.tutorial_1.text_color = { 200, 140, 220 }
+
+
+--[[
+
+We're going to now create a function to calculate the position of our text.
+
+We could do this as a local function. But remember: If we do this it's not extensible!
+
+But the nice way to do this would be to store your function in the config.
+
+Using a local it might be a few...nanoseconds faster but is that worth removing the modularity out of the module?
+
+If we store this function in the config, that means that people can build on top of it, override it, OR they 
+could straight call it inside of their module.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+So the function's argument will be the text that we want to display. 
+
+This is so we can determine the X and Y position of the text!
+
+]]--
+
+function config.plugins.tutorial_1.get_text_position(message)
+  --[[
+  
+  So we're trying to display this text on the top right of the editor.
+
+  For this, we need to know the editor's width and height.
+
+  The current font's size can be obtrained from the "style" module.
+
+  The editor's dimensions can be obtained by:
+  core.root_view.size.x
+  core.root_view.size.y
+  
+  ]]--
+
+  local message_width = style.code_font:get_width(message .. " ")
+
+  local font_height = style.code_font:get_size()
+
+  local x = core.root_view.size.x - message_width
+
+  local y = font_height / 2
+
+  return x, y
+end
+
+
+--[[
+
+Now we're going to actually draw something inside the editor.
+
+In order to inject our own code to draw text we're going to have to save the original draw function.
+
+We're going to save Rootview.draw to a variable we call parent_draw.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+So basically what's happening is as so:
+
+1. We save the old function
+2. We create a new one
+3. In the new function we call the old one so the editor still functions.
+
+We are extending the original function and basically shoveling more code into it!
+
+]]--
+
+local parent_draw = RootView.draw
+
+-- We're going to overload the original definition of draw in RootView by redefining the function.
+
+function RootView:draw()
+
+  -- Now here's where we call the original function.
+  parent_draw(self)
+
+  --[[
+
+  So right now show_my_message is nil. Luckily for us this also means false in an if statement.
+  
+  We're going to add this variable in later to check if we want to show our message or not.
+
+  We can also use inverted logic gates to do deflective returns!
+  
+  ]]--
+
+  if not config.plugins.tutorial_1.show_my_message then return end
+
+  --[[
+  
+  We're going to store the message in this local variable.
+
+  If it doesn't exist, it'll just say "Tutorial message not set!"
+
+  If it does, well, that's the message. :)
+
+  We can use that nil = false logic to automate this, very easily!
+  
+  ]]--
+
+  local message = config.plugings.tutorial_1.my_cool_message or "Tutorial message not set!"
+
+  -- Now we get the text coordinates from our function we made earlier!
+  
+  local x,y = config.plugins.tutorial_1.get_text_position(message)
+
+  --[[
+  
+  Finally, we can draw the text into the editor.
+
+  The draw_text function from renerer is an important function as it is used to display any and all text inside of the editor window!
+  
+  ]]--
+
+  renderer.draw_text(style.code_font, message, x, y, config.plugins.tutorial_1.text_color)
+
+end
+
+--[[
+
+Now, we want the end user to allow this message to be turned on or off.
+
+We can write a simple function to allow this. This is what I was talking about earlier. :D
+
+We can make it extensible by putting it into the config table!
+
+]]--
+
+function config.plugins.tutorial_1.toggle_message()
+  -- Here's that nil = false boolean logic coming into play again. :)
+  config.plugins.tutorial_1.show_my_message = not config.plugins.tutorial_1.show_my_message
+end
+
+--[[
+
+Next, let's make a function that intakes user input from the command bar!
+
+core.command_view:enter takes 2 arguments:
+  * The prompt to display before taking put.
+  * A function that takes the input as it's argument.
+
+And of course, we'll put this into the config so that it can be extended or changed!
+
+]]--
+
+function config.plugins.tutorial_1.input_message()
+
+  -- Entering into the command bar, we pass it a function to execute when you hit enter.
+  
+  core.command_view:enter("Text to display", function(text)
+    config.plugins.tutorial_1.my_cool_message = text
+    config.plugins.tutorial_1.show_my_message = true
+  end)
+end
+
+
+
+--[[
+
+Finally, we're going to add the toggle visibility and set message functions into the command list.
+
+ALT + S = Set the message.
+
+ALT + T = Toggle the message visibility.
+
+This is quite a simple task, but please observe how this is done:
+
+]]--
+
+local commands_to_add = {}
+
+commands_to_add["tutorial_1:set_message"] = config.plugins.tutorial_1.input_message
+
+commands_to_add["tutorial_1:toggle_message"] = config.plugins.tutorial_1.toggle_message
+
+command.add(nil, commands_to_add)
+
+--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+local new_keymaps = {}
+
+new_keymaps["alt+s"] = "tutorial_1:set_message"
+
+new_keymaps["alt+t"] = "tutorial_1:toggle_message"
+
+keymap.add(new_keymaps)
 
 
 
