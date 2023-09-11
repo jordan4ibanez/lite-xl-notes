@@ -20,9 +20,9 @@ the full pathlist is in data/core/start.lua
 
 #### per core developer:
 
-basically looks in DATADIR and USERDIR
+basically looks in ``DATADIR`` and ``USERDIR``
 
-with a priority for USERDIR
+with a priority for ``USERDIR``
 
 ## Tutorial layout rough draft:
 
