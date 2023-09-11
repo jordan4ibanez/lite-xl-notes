@@ -15,7 +15,7 @@ maybe also something about rootview/rootnod
 ## pathlist:
 the full pathlist is in data/core/start.lua
 
-## Important things
+## Tutorial layout rough draft:
 1. keymap shortcuts
 2. running a thing from keymap shortcuts
 3. interfacing into lite-xl from thing
