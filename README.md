@@ -34,15 +34,14 @@ Less comments to reinforce memorization of what's happening in the plugin.
 
 Also increases information density, so they can reads what's going on faster.
 
-0. the most basic tutorial, the base layout of a plugin
-1. keymap shortcuts
-2. running a thing from keymap shortcuts
-3. interfacing into lite-xl from thing
-4. a simple button that does a thing that also does the thing from the previous key shortcut
-5. a simple button that does a thing to make another button
-6. a group of buttons
-7. a drop down menu
-8. a tab window, utilizing the ``View`` module
-9. put things into the window
-10. editing helpers (scope, indentation, etc)
-11. Not sure yet, find out more important things to make the plugin more advanced!
+0. [the most basic tutorial, the base layout of a plugin](https://github.com/jordan4ibanez/lite-xl-notes/blob/main/tutorials/tutorial_0/tutorial_0.lua)
+1. [keymap shortcuts & running a thing from keymap shortcuts](https://github.com/jordan4ibanez/lite-xl-notes/blob/main/tutorials/tutorial_1/tutorial_1.lua)
+2. interfacing into lite-xl from thing
+3. a simple button that does a thing that also does the thing from the previous key shortcut
+4. a simple button that does a thing to make another button
+5. a group of buttons
+6. a drop down menu
+7. a tab window, utilizing the ``View`` module
+8. put things into the window
+9. editing helpers (scope, indentation, etc)
+10. Not sure yet, find out more important things to make the plugin more advanced!
