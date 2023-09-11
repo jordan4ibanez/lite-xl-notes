@@ -1,0 +1,2 @@
+# lite-xl-notes
+ 
