@@ -13,7 +13,14 @@ an explanation on how you can override everything
 maybe also something about rootview/rootnod
 
 ## pathlist:
+
 the full pathlist is in data/core/start.lua
+
+#### per core developer:
+
+basically looks in DATADIR and USERDIR
+
+with a priority for USERDIR
 
 ## Tutorial layout rough draft:
 
