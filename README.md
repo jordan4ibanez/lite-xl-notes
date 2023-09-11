@@ -30,6 +30,10 @@ This will be built upon a rolling implementation on the same plugin.
 
 The end programmer will see how the plugin evolves.
 
+Less comments to reinforce memorization of what's happening in the plugin.
+
+Also increases information density, so they can reads what's going on faster.
+
 0. the most basic tutorial, the base layout of a plugin
 1. keymap shortcuts
 2. running a thing from keymap shortcuts
