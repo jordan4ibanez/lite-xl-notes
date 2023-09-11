@@ -265,7 +265,7 @@ function RootView:draw()
   
   ]]--
 
-  local message = config.plugings.tutorial_1.my_cool_message or "Tutorial message not set!"
+  local message = config.plugins.tutorial_1.my_cool_message or "Tutorial message not set!"
 
   -- Now we get the text coordinates from our function we made earlier!
   
@@ -314,10 +314,12 @@ function config.plugins.tutorial_1.input_message()
 
   -- Entering into the command bar, we pass it a function to execute when you hit enter.
   
-  core.command_view:enter("Text to display", function(text)
-    config.plugins.tutorial_1.my_cool_message = text
-    config.plugins.tutorial_1.show_my_message = true
-  end)
+  core.command_view:enter("Text to display", {
+    submit = function(text)
+      config.plugins.tutorial_1.my_cool_message = text
+      config.plugins.tutorial_1.show_my_message = true
+    end
+  })
 end
 
 
@@ -353,4 +355,4 @@ new_keymaps["alt+t"] = "tutorial_1:toggle_message"
 keymap.add(new_keymaps)
 
 
-
+print("Tutorial 1 loaded!")
