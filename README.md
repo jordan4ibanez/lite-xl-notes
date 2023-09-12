@@ -45,3 +45,9 @@ Also increases information density, so they can reads what's going on faster.
 8. put things into the window
 9. editing helpers (scope, indentation, etc)
 10. Not sure yet, find out more important things to make the plugin more advanced!
+
+# BEGIN LITE XL API NOTES
+
+## Core
+
+
