@@ -69,5 +69,5 @@ Also increases information density, so they can reads what's going on faster.
 #### `core.set_project_dir ( new_dir, change_project_fn )`
 * new_dir = 
   * A directory literal.
-* change_project_fn = <Optional>
+* change_project_fn = ( optional )
   * A function literal to tell core how to change directories.
