@@ -66,6 +66,6 @@ Also increases information density, so they can reads what's going on faster.
 
 ### Functions:
 
-#### core.set_project_dir ( new_dir, change_project_fn )
+`core.set_project_dir ( new_dir, change_project_fn )`
 
 
