@@ -48,6 +48,13 @@ Also increases information density, so they can reads what's going on faster.
 
 # BEGIN LITE XL API NOTES
 
-## Core
+## Module Core
 
+### Requires Modules
+
+- core.strict
+- core.regex
+- core.common
+- core.config
+- colors.default
 
