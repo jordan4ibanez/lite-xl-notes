@@ -48,13 +48,26 @@ Also increases information density, so they can reads what's going on faster.
 
 # BEGIN LITE XL API NOTES
 
-## Module Core
+**NOTE:** The order in which functions are laid out are in the order they appear in the source code.
 
-### Requires Modules
+## Module core
+
+### Depencies:
 
 - core.strict
 - core.regex
 - core.common
 - core.config
 - colors.default
+
+### Exports:
+
+- core (table)
+
+### Functions:
+
+
+
+
+
 
