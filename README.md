@@ -67,7 +67,19 @@ Also increases information density, so they can reads what's going on faster.
 ### Functions:
 
 #### `core.set_project_dir ( new_dir, change_project_fn )`
+Set the project's directory.
 * new_dir = 
   * A directory literal.
 * change_project_fn = ( optional )
   * A function literal to tell core how to change directories.
+  * The function passed in has no parameters.
+
+#### `core.open_folder_project( dir_path_abs )`
+Open a folder as a project.
+* dir_path_abs =
+  * A directory literal.
+
+#### `core.project_subdir_is_shown( dir, filename )`
+
+
+
