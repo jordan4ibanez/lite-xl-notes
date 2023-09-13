@@ -46,7 +46,7 @@ Also increases information density, so they can reads what's going on faster.
 9. editing helpers (scope, indentation, etc)
 10. Not sure yet, find out more important things to make the plugin more advanced!
 
-# BEGIN LITE XL API NOTES
+# BEGIN LITE XL API DOCUMENTATION
 
 **NOTE:** The order in which functions are laid out are in the order they appear in the source code.
 
