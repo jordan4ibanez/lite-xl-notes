@@ -80,6 +80,22 @@ Open a folder as a project.
   * A directory literal.
 
 #### `core.project_subdir_is_shown( dir, filename )`
+DEPRECTATED! REMOVING SOON! A hack to check is expanded in TreeView.
+* dir =
+  * A directory object.
+* filename =
+  * A file name literal in the directory.
+
+#### `core.add_project_directory( path )`
+Add a project directory into TreeView.
+* path =
+  * A path literal.
+
+
+#### `core.rescan_project_directories()`
+Force TreeView to rescan project directories.
+
+#### `core.project_dir_by_name( name )`
 
 
 
